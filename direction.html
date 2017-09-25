@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tiểu luận CNTT 2017</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+		<meta name="theme-color" content="#ef6c00">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta property="og:image" content="https://maps.google.com/localguides/app/img/lg-signup.jpg" />
+		<meta property="og:description" content=""/>
+		<meta property="og:title" content=""/>
+		<style type="text/css">
+		  html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+		</style>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8WSe9ye_8VGzDLd6rWB9zlHqk1GJapbc"></script>
+		<script type="text/javascript">
+			function initialize() {
+				var mapOptions = {
+					center: { lat: -34.397, lng: 150.644},
+					zoom: 8
+				};
+				var map = new google.maps.Map(document.getElementById('map-canvas'),
+					mapOptions);
+				}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+	</head>
+	<body>
+		<center>
+			<form>
+				<div id="map-canvas">
+					<input type="text" class="form-control" name="maps_address" id="maps_address" value="" placeholder="Nhập tên địa điểm cần tìm" size="100" height="501px">
+					<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD8WSe9ye_8VGzDLd6rWB9zlHqk1GJapbc&q=maps_address" allowfullscreen></iframe>
+				</div>
+			</form>
+		</center>
+	</body>
+</html>
