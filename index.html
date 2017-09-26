@@ -120,18 +120,22 @@
 			</div>
 			<form class="form-horizontal" role="form" style="margin:20px 0px;">
 				<div class="form-group">
-					<div class="col-md-12 col-xs-4">
-						<!--input type="text" class="form-control input-lg" name="maps_address" id="maps_address" placeholder="Nhập tên địa điểm mà bạn cần tìm"-->
-						<gcse:search enableAutoComplete="true"></gcse:search>
-						<script>
-							(function() {
-								var cx = '000436166796703916710:1qfdsflzetq'; // Insert your own Custom Search engine ID here
-								var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
-								gcse.src = (document.location.protocol == 'https' ? 'https:' : 'http:') +
-									'//www.google.com/cse/cse.js?cx=' + cx;
-								var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
-							  })();
-						</script>
+					<div class="row">
+						<div class="col-md-12 col-xs-6">
+							<!--input type="text" class="form-control input-lg" name="maps_address" id="maps_address" placeholder="Nhập tên địa điểm mà bạn cần tìm"-->
+							<gcse:search enableAutoComplete="true"></gcse:search>
+							<script>
+								(function() {
+									var cx = '000436166796703916710:1qfdsflzetq';
+									var gcse = document.createElement('script');
+									gcse.type = 'text/javascript';
+									gcse.async = true;
+									gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+									var s = document.getElementsByTagName('script')[0];
+									s.parentNode.insertBefore(gcse, s);
+								})();
+							</script>
+						</div>
 					</div>
 				</div>
 			</form>
