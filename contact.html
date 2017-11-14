@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tiểu luận CNTT 2017</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1, width=device-width">
+		<meta name="theme-color" content="#ef6c00">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta property="og:image" content="https://maps.google.com/localguides/app/img/lg-signup.jpg" />
+		<meta property="og:description" content=""/>
+		<meta property="og:title" content=""/>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			.btn-group {
+			margin-top: 10px;
+			}
+			.row {
+			margin-top: 10px;
+			}
+			#map {
+				height: 600px;
+				width: 72%;
+			}
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8WSe9ye_8VGzDLd6rWB9zlHqk1GJapbc"></script>
+		<script type="text/javascript">
+			function initialize() {
+				var mapOptions = {
+					center: { lat: -34.397, lng: 150.644},
+					zoom: 8
+				};
+				var map = new google.maps.Map(document.getElementById('map-canvas'),
+					mapOptions);
+				}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-2">
+					<ul class="nav navbar-nav navbar-right" style="margin: 10px 0px 0px 0px;">
+						<div class="btn-group">
+							<a class="btn btn-primary" href="index.html">Trang chủ</a>
+							<a class="btn btn-primary" href="direction.html">Chỉ đường</a>
+							<a class="btn btn-primary" href="search.html">Tìm kiếm</a>
+							<a class="btn btn-primary" href="contact.html">Liên hệ</a>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<div class="navibar-header nvaibar-left" style="margin: 0px 10px 0px;">        
+				<a class="navibar-brand" href="index.html">         
+					<h1><img src="imgs/logo.jpg"/></h1>
+				</a>
+			</div>
+			<div class="row">
+				<div class="col-lg-9 col-md-9"><br>
+				</div>
+				<div class="col-lg-3 col-md-3">
+					<h5>Bản đồ</h5>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15715.316090662991!2d105.7601493283571!3d10.030963970938007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0883d0dac6b15%3A0xf6ae5b1bd18625!2sCan+Tho+University!5e0!3m2!1sen!2s!4v1510546344159" width="200" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<br /><br /><a href="mark.html">Xem bản đồ</a>
+				</div>
+				<div class="col-lg-9 col-md-9">
+					<center>
+						<h3>Liên hệ với chúng tôi!</h3>
+						<p>Trường Đại học Cần Thơ (Can Tho University)
+						<br>Khu II, đường 3/2, P. Xuân Khánh, Q. Ninh Kiều, TP. Cần Thơ.
+						<br>Điện thoại: (84) 939922913; Email: hieudc15v7k504@vlvh.ctu.edu.vn.</p>
+					</center>
+				</div>
+			</div>
+				<br><br>
+			<footer>
+				<center><p>© Bản quyền thuộc về Cổ Bảo Hiếu & Nguyễn Huỳnh Thúy An.</p></center>
+				<div class="col-sm-10 col-sm-offset-2">
+					<ul class="nav navbar-nav navbar-right nav-pills nav-default">
+						<div class="btn-group">
+							<a class="btn" href="index.html">Trang chủ</a>
+							<a class="btn" href="direction.html">Chỉ đường</a>
+							<a class="btn" href="search.html">Tìm kiếm</a>
+							<a class="btn" href="contact.html">Liên hệ</a>
+						</div>
+					</ul>
+				</div>
+			</footer>
+		</div>
+		</body>
+	</html>

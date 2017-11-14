@@ -1,39 +1,176 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tiểu luận CNTT 2017</title>
+		<title>Tiểu luận CNTT 2017</title>  
 		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+		<meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1, width=device-width">
 		<meta name="theme-color" content="#ef6c00">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta property="og:image" content="https://maps.google.com/localguides/app/img/lg-signup.jpg" />
 		<meta property="og:description" content=""/>
-		<meta property="og:title" content=""/>
-		<style type="text/css">
-		  html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    <meta property="og:title" content=""/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			.btn-group {
+			margin-top: 10px;
+			}
+			.row {
+			margin-top: 10px;
+			}
+			#map {
+				height: 600px;
+				width: 72%;
+			}
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
 		</style>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8WSe9ye_8VGzDLd6rWB9zlHqk1GJapbc"></script>
-		<script type="text/javascript">
-			function initialize() {
-				var mapOptions = {
-					center: { lat: -34.397, lng: 150.644},
-					zoom: 8
-				};
-				var map = new google.maps.Map(document.getElementById('map-canvas'),
-					mapOptions);
-				}
-			google.maps.event.addDomListener(window, 'load', initialize);
-		</script>
-	</head>
-	<body>
+    <link rel="stylesheet" href="css/style.css">   
+    <style type="text/css" media="screen">
+      input[type="button"]{
+        font-size: 13px;
+        padding-top: 3px;
+        height: 25px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>  
+    //============= ==================== ==================== ====================
+    //Tìm đường từ vị trí hiện tại đến vị trí của cửa hàng (vị trí đã định sẵn)
+    //============= ==================== ==================== ====================
+
+    //tạo mới 2 đối tượng DirectionsService để lấy dữ liệu bất đồng bộ (Ajax)
+    //và đối tượng DirectionsRenderer để gắn hiển thị đường đi
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer()
+    var map;
+
+    //Viết hàm chuẩn bị (initialize) map
+    //trong đó có đối tượng mapoption gồm điểm chính giữa bản đồ (lấy giá trị là vĩ độ và kinh độ)
+    //độ zoom của map, giá trị từ 0 mức nhìn bao quát nhất đến 21 nhìn chi tiết nhất
+    function initialize() {
+      var CT = new google.maps.LatLng(10.030964,105.768904);
+      var mapOptions = {
+        zoom:7,
+        center: CT
+      }
+      map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      //gắn chỉ đường vào map sau khi đã tính toán và sử lý đường đi
+      directionsDisplay.setMap(map);
+
+    }
+    // hàm lấy địa điểm hiện tại thông qua geolocation của HTML5
+    function getCurrentLatlng(){
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success);
+      } else {
+        error('Trình duyệt không hỗ trợ lấy vị trí của bạn');
+      }
+    }
+
+    //nếu người dùng cho phép lấy địa điểm hiện tại
+    function success(position) {
+        //lấy giá trị hiện tại thông qua geolocation của HTML5
+        var diemhientai = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        //điểm đến là điểm chọn từ danh sách option
+        var e = document.getElementById("option");
+        var diemden = e.options[e.selectedIndex].getAttribute("data-map");
+        //viết request để gửi đi với
+        //origin là điểm hiện tại đang đứng ()
+        //Phương pháp geolocation của HTML5 đôi khi trả về giá trị địa điểm hiện tại của bạn không chính xác
+        //Bởi:
+          //+ 6 tháng Google mới cập nhật 1 lần
+          //+ Tuỳ thuộc vào vị trí của bạn ở đường lớn hay trong hẻm nhỏ
+          //+ Độ mạnh, yếu của mạng internet
+
+        //destination là điểm đến, điểm đã chọn vĩ độ, kinh độ từ trước
+        //travelMode ở đây sử dụng là DRIVING (lái xe hơi), bạn có thể tuỳ chọn Walking,Bicycling,Transit
+        var request = {
+          origin:diemhientai,
+          destination:diemden,
+          travelMode: google.maps.TravelMode.WALKING,
+      };
+
+      //thực hiện tìm kiếm và hiển thị kết quả
+      directionsService.route(request, function(response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+           // Tính khoảng cách
+           //khoảng cách chia 1000 để ra số km
+           //.toFixed(1) làm tròn sau dấu , (phấy) 1 đơn vị
+         var khoangcacnh = Number((response.routes[0].legs[0].distance.value / 1000 ).toFixed(1))+ "Km";
+
+          // Tính thời gian
+           //Thời gian chia 60 để ra số phút
+         var thoigian = Number((response.routes[0].legs[0].duration.value/600).toFixed(1)) + " phút";
+         alert("Khoảng cách: " +khoangcacnh +"\nThời gian: "+ thoigian );
+          //nếu dữ liệu gửi đi được trả về với trạng thái Ok thì gắn vào directionsDisplay
+          directionsDisplay.setDirections(response);
+        }
+      });
+    }//end funtion sucess
+
+    //khi trang web được load lên thì thực hiện hàm (initialize)
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+  </head>
+  <body>
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-2">
+                <ul class="nav navbar-nav navbar-right" style="margin: 10px 0px 0px 0px;">
+                    <div class="btn-group">
+                      <a class="btn btn-primary" href="index.html">Trang chủ</a>
+                      <a class="btn btn-primary" href="direction.html">Chỉ đường</a>
+                      <a class="btn btn-primary" href="search.html">Tìm kiếm</a>
+                      <a class="btn btn-primary" href="contact.html">Liên hệ</a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="navibar-header nvaibar-left" style="margin: 0px 10px 0px;">        
+            <a class="navibar-brand" href="index.html">         
+                <h1><img src="imgs/logo.jpg"/></h1>
+            </a>
+        </div>
+      </div>
+
 		<center>
-			<form>
-				<div id="map-canvas">
-					<input type="text" class="form-control" name="maps_address" id="maps_address" value="" placeholder="Nhập tên địa điểm cần tìm" size="100" height="501px">
-					<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD8WSe9ye_8VGzDLd6rWB9zlHqk1GJapbc&q=maps_address" allowfullscreen></iframe>
-				</div>
-			</form>
+      <div class="wrap">
+          <select name="" id="option">
+            <option value="" data-map="Cần Thơ Museum, 1 Hòa Bình, Tân An, Cần Thơ">Bảo Tàng Cần Thơ</option>
+            <option value="" data-map="106 Hai Bà Trưng, Tân An, Cần Thơ">Bến Ninh Kiều</option>
+            <option value="" data-map="Cai Rang Floating Market, An Bình, Cái Răng, Cần Thơ">Chợ Nổi Cái Răng</option>
+            <option value="" data-map="My Khanh Tourist Village, 335 Lộ Vòng Cung, Mỹ Khánh, Phong Điền, Cần Thơ, Vietnam">Khu Du Lịch Mỹ Khánh</option>
+            <option value="" data-map="Nam Nha Pagoda, Cách Mạng Tháng Tám, An Thới, Cần Thơ">Nam Nhã Đường</option>
+            <option value="" data-map="Binh Thuy ancient house, 144 Bùi Hữu Nghĩa, Bình Thủy, Cần Thơ">Nhà Cổ Bình Thủy</option>
+            <option value="" data-map="Thiền Viện Trúc Lâm Phương Nam, ĐT923, Mỹ Khánh, Phong Điền, Cần Thơ, Vietnam">Thiền Viện Trúc Lâm Phương Nam</option>
+            <option value="" data-map="Bang Lang stork garden, Thới Thuận, Thốt Nốt, Cần Thơ">Vườn Cò Bằng Lăng</option>
+          </select>
+          <input type="button" class="" name="" value="Tìm đường đi" onclick='getCurrentLatlng()'>
+      </div>
 		</center>
-	</body>
+    <div id="map-canvas"></div>
+    
+    <div class="container">
+        <br><br>
+        <footer>
+          <center><p>© Bản quyền thuộc về Cổ Bảo Hiếu & Nguyễn Huỳnh Thúy An.</p></center>
+            <div class="col-sm-10 col-sm-offset-2">
+              <ul class="nav navbar-nav navbar-right nav-pills nav-default">
+                <div class="btn-group">
+                  <a class="btn" href="index.html">Trang chủ</a>
+                  <a class="btn" href="direction.html">Chỉ đường</a>
+                  <a class="btn" href="search.html">Tìm kiếm</a>
+                  <a class="btn" href="contact.html">Liên hệ</a>
+                </div>
+              </ul>
+          </div>
+        </footer>
+      </div>
+  </body>
 </html>
