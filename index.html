@@ -1,236 +1,265 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Tiểu luận CNTT 2017</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1, width=device-width">
-		<meta name="theme-color" content="#ef6c00">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<meta property="og:image" content="https://maps.google.com/localguides/app/img/lg-signup.jpg" />
-		<meta property="og:description" content=""/>
-		<meta property="og:title" content=""/>
+
+<head>
+    <title>Tiểu luận CNTT 2017</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1, width=device-width">
+    <meta name="theme-color" content="#ef6c00">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta property="og:image" content="https://maps.google.com/localguides/app/img/lg-signup.jpg" />
+    <meta property="og:description" content="" />
+    <meta property="og:title" content="" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">  
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBaYui_APFMKUH0bJZdMbKyUwAz8ahF9Bc" async="" defer="defer" type="text/javascript"></script>
-		<style>
-			.btn-group {
-			margin-top: 10px;
-			}
-			.row {
-			margin-top: 10px;
-			}
-			#map {
-				height: 600px;
-				width: 72%;
-			}
-			html, body {
-				height: 100%;
-				margin: 0;
-				padding: 0;
-			}
-		</style>
-		<script type="text/javascript">
-			function initialize() {
-				var mapOptions = {
-					center: { lat: -34.397, lng: 150.644},
-					zoom: 8
-				};
-				var map = new google.maps.Map(document.getElementById('map-canvas'),
-					mapOptions);
-				}
-			google.maps.event.addDomListener(window, 'load', initialize);
-		</script>
-	</head>
-	<body>
-			<div class="container">
-					<div class="row">
-							<div class="col-sm-10 col-sm-offset-2">
-									<ul class="nav navbar-nav navbar-right" style="margin: 10px 0px 0px 0px;">
-											<div class="btn-group">
-													<a class="btn btn-success" href="index.html">Trang chủ</a>
-													<a class="btn btn-primary" href="direction.html">Chỉ đường</a>
-													<a class="btn btn-primary" href="search.html">Tìm kiếm</a>
-													<a class="btn btn-primary" href="contact.html">Liên hệ</a>
-											</div>
-									</ul>
-							</div>
-					</div>
-					<div class="navibar-header nvaibar-left" style="margin: 0px 10px 0px;">        
-							<a class="navibar-brand" href="index.html">         
-									<h1><img src="imgs/logo.jpg"/></h1>
-							</a>
-					</div>
-					<br>
-			<h2 class="text-center text-danger">Cần Thơ gạo trắng nước trong <br>Ai đi đến đó lòng không muốn về.</h2><br>
-			<div id="calTravel" class="carousel slide" data-ride="carousel">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-					  <li data-target="#calTravel" data-slide-to="0" class="active"></li>
-					  <li data-target="#calTravel" data-slide-to="1"></li>
-					  <li data-target="#calTravel" data-slide-to="2"></li>
-					  <li data-target="#calTravel" data-slide-to="3"></li>
-					  <li data-target="#calTravel" data-slide-to="4"></li>
-					  <li data-target="#calTravel" data-slide-to="5"></li>
-					  <li data-target="#calTravel" data-slide-to="6"></li>
-					  <li data-target="#calTravel" data-slide-to="7"></li>
-					  <li data-target="#calTravel" data-slide-to="8"></li>
-					</ol>
-				  
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner">
-					  <div class="item active">
-						<img src="imgs/1.jpg" alt="Ninh Kieu">
-						<div class="carousel-caption">
-						  <h3>Bến Ninh Kiều</h3>
-						</div>
-					  </div>
-				  
-					  <div class="item">
-						<img src="imgs/4.jpg" alt="Trung Tam">
-						<div class="carousel-caption">
-						  <h3>Trung Tâm Thành Phố</h3>
-						</div>
-					  </div>
-				  
-					  <div class="item">
-						<img src="imgs/5.jpg" alt="Cho">
-						<div class="carousel-caption">
-						  <h3>Chợ Ninh Kiều</h3>
-						</div>
-					  </div>
-				  
-					  <div class="item">
-						<img src="imgs/3.jpg" alt="Cho Noi">
-						<div class="carousel-caption">
-						  <h3>Chợ Nổi Cái Răng</h3>
-						</div>
-					  </div>
-				  
-					  <div class="item">
-						<img src="imgs/6.jpg" alt="Cho Noi">
-						<div class="carousel-caption">
-						  <h3>Chợ Nổi Cái Răng</h3>
-						</div>
-					  </div>
-				  
-					  <div class="item">
-						<img src="imgs/2.jpg" alt="Nam Nha">
-						<div class="carousel-caption">
-						  <h3>Nam Nhã Đường</h3>
-						</div>
-					  </div>
-				  
-					  <div class="item">
-						<img src="imgs/7.jpg" alt="Nha Co">
-						<div class="carousel-caption">
-						  <h3>Nhà Cổ Bình Thủy</h3>
-						</div>
-					  </div>
-						
-							<div class="item">
-							<img src="imgs/8.jpg" alt="Vuon Co">
-							<div class="carousel-caption">
-								<h3>Vườn Cò Bằng Lăng</h3>
-							</div>
-							</div>
-							
-							<div class="item">
-							<img src="imgs/9.jpg" alt="Bao Tang">
-							<div class="carousel-caption">
-								<h3>Bảo Tàng Cần Thơ</h3>
-							</div>
-							</div>
-					</div>
-					<!-- Left and right controls -->
-				<a class="left carousel-control" href="#calTravel" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="right carousel-control" href="#calTravel" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-					<span class="sr-only">Next</span>
-				</a>
-				</div>
-				<br><br>
-				<div class="jumbotron">
-						<h3 class="text-center text-primary">Các địa điểm du lịch ở Ninh Kiều</h3>
-						<p>- Bảo Tàng Cần Thơ</p>
-						Bảo tàng thành phố Cần Thơ, tọa lạc tại số 1, đường Ðại lộ Hòa Bình,  quận Ninh Kiều, thành phố Cần Thơ. Có diện tích gần 3.000m², nên bảo tàng Cần Thơ được xem là bảo tàng tổng hợp có quy mô lớn nhất khu vực Ðồng bằng Sông Cửu Long.Bảo tàng thành phố Cần Thơ được thành lập vào năm 1976, có tên là trung tâm văn hóa Việt – Mỹ, qua nhiều lần thay đổi tên đến năm 1992 mới chính thức mang tên Bảo tàng Cần Thơ . Bảo tàng trưng bày hiện vật và giới thiệu về Ðất nước và con người Cần Thơ qua từng thời kỳ lịch sử, các thành tựu kinh tế – văn hóa xã hội, các hiện vật, vũ khí, mô hình thời chiến của các dân tộc Kinh, Hoa, Khmer trong quá trình dựng nước – giữ nước và phát triển đất nước để có một hiện tại và tương lai tươi đẹp của vùng đất Tây Ðô ngày nay. Bên trong bảo tàng hiện trưng bày khoảng 1000 cổ vật, di vật, hiện vật, di tích lịch sử quý hiếm.
-						Bảo tàng gồm 2 tầng lầu. Tầng trệt  được trưng bày khái quát về đặc điểm tự nhiên – xã hội, Thơ xưa và nay, giới thiệu vị trí địa lý, đất đai, khí hậu sông ngòi, động thực vật, cảnh quan, văn hóa óc eo, văn hóa 3 dân tộc Kinh – Khmer – Hoa, triển lảm ảnh chụp Cần Thơ xưa và nay. Tầng 2 được trưng bày về lịch sử chống giặc ngoại xâm của nhân dân Cần Thơ – Hậu Giang trong kháng chiến chống Mỹ và Pháp cũng như những vũ khí, chiến tích chiến tranh Việt Nam.
-						<center><img src="imgs/15.jpg" alt="Bảo Tàng Cần Thơ"></center>
-						<br><br>
-						<p>- Bến Ninh Kiều</p>
-						Bến Ninh Kiều nay được gọi là Công viên Ninh Kiều là một bến nước và là địa danh du lịch, văn hóa của thành phố Cần Thơ hình thành từ thế kỷ 19. Bến Ninh Kiều tọa lạc ở bờ phải sông Hậu, nằm giữa ngã ba sông Hậu và sông Cần Thơ tiếp giáp với đường Hai Bà Trưng, phường Tân An, quận Ninh Kiều thuộc thành phố Cần Thơ.
-						Bến Ninh Kiều là một địa danh du lịch có từ lâu và hấp dẫn du khách bởi phong cảnh sông nước hữu tình và vị trí thuận lợi nhìn ra dòng sông Hậu. Từ lâu bến Ninh Kiều đã trở thành biểu tượng về nét đẹp thơ mộng bên bờ sông Hậu của cả Thành phố Cần Thơ, thu hút nhiều du khách đến tham quan và đi vào thơ ca.
-						<center><img src="imgs/16.jpg" alt="Bến Ninh Kiều"></center>
-						<br><br>
-						<p>- Chợ Nổi Cái Răng</p>
-						Chợ nổi Cái Răng là chợ nổi chuyên trao đổi, mua bán nông sản, các loại trái cây, hàng hóa, thực phẩm, ăn uống ở trên sông và là điểm tham quan đặc sắc của quận Cái Răng, thành phố Cần Thơ. Chợ nổi Cái Răng là một trong ba chợ nổi lớn nhất Cần Thơ. Nét độc đáo và đặc điểm chính của chợ nổi Cái Răng là chuyên buôn bán các loại trái cây, đặc sản của vùng đồng bằng sông Cửu Long.
-						Chợ nổi Cái Răng nằm trên sông Cái Răng, gần cầu Cái Răng, cách trung tâm thành phố Cần Thơ khoảng 6 km đường bộ và mất 30 phút nếu đi bằng thuyền từ Bến Ninh Kiều (thành phố Cần Thơ - thủ phủ của Tây Đô cũ). Cũng như những chợ nổi khác ở Đồng bằng sông Cửu Long, chợ được hình thành để đáp ứng nhu cầu mua bán, trao đổi hàng hóa khi đường bộ và các phương tiện lưu thông đường bộ chưa phát triển.
-						Người ta tụ tập trên sông và bằng các phương tiện như xuồng, ghe, tắc ráng...						
-						<center><img src="imgs/17.jpg" alt="Chợ Nổi Cái Răng"></center>
-						<br><br>
-				</div>
-				
-				<div class="jumbotron">
-					<h3 class="text-center text-primary">Các địa điểm du lịch ở Bình Thủy</h3>
-					<p>- Nam Nhã Đường</p>
-					Chùa Nam Nhã - còn gọi chùa Minh Sư - nằm trong khung cảnh tĩnh mịch với cảnh trí đơn sơ bên bờ sông Bình Thuỷ. Chung quanh là khu vườn rợp mát. Trong vườn, trước đây được trồng nhiều loại cây quý như  tùng, trắc và các cây cổ thụ khác. Dưới bóng mát những gốc cây này là những cây kiểng quý giá, nhiều tuổi, được chăm chút công phu tạo cảnh quan an bình thoát tục.
-					Du khách đến Cần Thơ, theo đường Cách Mạng Tháng Tám đi lên Bình Thủy, sẽ thấy Nam Nhã Đường nằm ở vị trí bên phải đầu vàm Bình Thuỷ, đối diện đình Bình Thủy bên kia sông. Nơi này, xưa thuộc ấp Bình Nhật, xã Long Tuyền (nay thuộc phường An Thới, quận Bình Thủy, thành phố Cần Thơ).
-					<center><img src="imgs/11.jpg" alt="Chùa Nam Nhã"></center>
-					<br><br>
-					<p>- Nhà Cổ Bình Thủy</p>
-					Nhà cổ Bình Thuỷ nằm ngay trên đường Bùi Hữu Nghĩa, phường Bình Thủy, ngôi nhà cổ của gia đình họ Dương (xây từ năm 1870), mỗi năm đón tiếp hàng ngàn lượt khách trong ngoài nước đến tham quan. Nhà cổ Bình Thủy kiến trúc độc đáo trên 100 năm tuổi, là sự kết hợp giao lưu văn hóa Đông – Tây, được thể hiện nhiều họa tiết hoa văn đẹp mắt
-					<center><img src="imgs/12.jpg" alt="Nhà Cổ Bình Thủy"></center>
-				</div>
+    <style>
+        .btn-group {
+            margin-top: 10px;
+        }
+        
+        .row {
+            margin-top: 10px;
+        }
+        
+        #map {
+            height: 600px;
+            width: 72%;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: {
+                    lat: -34.397,
+                    lng: 150.644
+                },
+                zoom: 8
+            };
+            var map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
 
-				<div class="jumbotron">
-					<h3 class="text-center text-primary">Các địa điểm du lịch ở Phong Điền</h3>
-					<p>- Khu Du Lịch Mỹ Khánh</p>
-					Làng Du Lịch Mỹ Khánh thuộc huyện Phong Điền – TP.Cần Thơ là điểm đến hấp dẫn và là điểm du lịch tiêu biểu ở Đồng bằng sông Cửu Long, nằm cách trung tâm TP.Cần Thơ 10km, trên tuyến Lộ Vòng Cung lịch sử và ở giữa hai chợ nổi Cái Răng và Phong Điền, là nơi hội tụ những tinh hoa văn hóa sông nước miệt vườn với nhiều chủng loại trái cây đặc sản, bốn mùa trĩu quả và nhiều chương trình ẩm thực phong phú, đậm chất Nam bộ và nhiều nhà hàng có số ghế ngồi phù hợp nhu cầu của khách,hội trường 350 chỗ ngồi với đầy đũ trang thiết bị, có đội tàu và du thuyền chuyên phục vụ tham quan chợ nổi,ăn uống trên tàu. Đến với Làng Du Lịch Mỹ Khánh, quý khách thỏa sức khám phá, tìm hiểu về đời sống cư dân miệt vườn như: tham quan Nhà cổ Nam bộ , thưởng thức chương trình văn nghệ “Đờn ca tài tử”, “Một ngày làm Điền Chủ” với bữa cơm điền chủ, “Một ngày làm nông dân”, “Tát mương bắt cá…”, tham quan Làng nghề văn hóa truyền thống, vườn cây ăn trái, các dịch vụ tại chỗ như đi xe ngựa, bơi thuyền, Taxi điện, đua heo, đua chó, xiếc khỉ, câu cá sấu…và nhiều chương trình khác theo yêu cầu của quý khách.
-					<center><img src="imgs/13.jpg" alt="Khu Du Lịch Mỹ Khánh"></center>
-					<br><br>
-					<p>- Thiền Viện Trúc Lâm Phương Nam</p>
-					Thiền viện Trúc Lâm Phương Nam được khánh thành ngày 17/5/2014, tại xã Mỹ Khánh, huyện Phong Điền, TP Cần Thơ. Thiền viện Trúc Lâm Phương Nam được xây dựng trên diện tích gần 4 ha, với kết cấu lợp ngói, khung cột gỗ lim, chánh điện rộng cùng nhà tổ, nhiều tượng Phật được làm bằng gỗ Du Sam… Tổng kinh phí xây dựng là 145 tỷ đồng. Đây là ngôi chùa rộng nhất khu vực Đồng bằng sông Cửu Long. Thiền viện Trúc Lâm Phương Nam do Đại tướng Phạm Văn Trà - nguyên Bộ trưởng Bộ Quốc phòng - đề xuất xây dựng và chính Đại tướng cũng là trưởng ban vận động đóng góp xây dựng Thiền viện.
-					<center><img src="imgs/14.jpg" alt="Thiền Viện Trúc Lâm Phương Nam"></center>
-				</div>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-2">
+                <ul class="nav navbar-nav navbar-right" style="margin: 10px 0px 0px 0px;">
+                    <div class="btn-group">
+                        <a class="btn btn-success" href="index.html">Trang chủ</a>
+                        <a class="btn btn-primary" href="direction.html">Chỉ đường</a>
+                        <a class="btn btn-primary" href="search.html">Tìm kiếm</a>
+                        <a class="btn btn-primary" href="contact.html">Liên hệ</a>
+                        <a class="btn btn-primary" href="travel.html">Travel</a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="navibar-header nvaibar-left" style="margin: 0px 10px 0px;">
+            <a class="navibar-brand" href="index.html">
+                <h1><img src="imgs/logo.jpg" /></h1>
+            </a>
+        </div>
+        <br>
+        <h2 class="text-center text-danger">Cần Thơ gạo trắng nước trong <br>Ai đi đến đó lòng không muốn về.</h2><br>
+        <div id="calTravel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#calTravel" data-slide-to="0" class="active"></li>
+                <li data-target="#calTravel" data-slide-to="1"></li>
+                <li data-target="#calTravel" data-slide-to="2"></li>
+                <li data-target="#calTravel" data-slide-to="3"></li>
+                <li data-target="#calTravel" data-slide-to="4"></li>
+                <li data-target="#calTravel" data-slide-to="5"></li>
+                <li data-target="#calTravel" data-slide-to="6"></li>
+                <li data-target="#calTravel" data-slide-to="7"></li>
+                <li data-target="#calTravel" data-slide-to="8"></li>
+            </ol>
 
-				<div class="jumbotron">
-					<h3 class="text-center text-primary">Các địa điểm du lịch ở Thốt Nốt</h3>
-					<p>- Vườn Cò Bằng Lăng</p>
-						Vườn cò Bằng Lăng ở xã Thới Thuận, huyện Thốt Nốt cách Cần Thơ 45 km đi theo Ql 91 hướng về Long Xuyên, vườn rộng hơn 2 ha có trên 20 loài chim, 10 giống cò với số lượng đông hàng chục ngàn con sinh sống trong vườn.
-					Có 2 cách để đi thăm vườn cò: khách du lịch có thể thuê thuyền. thong thả theo dòng sông Hậu, len lỏi vào các con kênh nhỏ để vào thăm vườn, hoặc du khách có thể đi xe. Đường vào vườn cò là đường làng nhỏ, không thích hợp cho xe du lịch. Khách du lịch có thể đi xe máy để vào hoặc là đi bộ. Đi bộ là thú vị nhất, khách du lịch có thể thả hồn theo khung cảnh thôn dã trên đường đi. 
-					<center><img src="imgs/10.jpg" alt="Vườn Cò Bằng Lăng"></center>
-				</div>
-				
-				<div class="jumbotron">
-					<h3 class="text-center text-success">Đôi nét về Cần Thơ qua góc máy của Chamiee Channel</h3>
-				
-				<div class="embed-responsive embed-responsive-16by9">
-				<center>
-					<iframe class="embed-responsive-item" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FYANLoveTravel%2Fvideos%2F631835296940942" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true" autoplay="1"></iframe>
-				</center>
-				</div>
-				</div>
-				<br>
-				<footer>
-						<center><p>© Bản quyền thuộc về Cổ Bảo Hiếu & Nguyễn Huỳnh Thúy An.</p></center>
-						<div class="col-sm-10 col-sm-offset-2">
-								<ul class="nav navbar-nav navbar-right nav-pills nav-default">
-										<div class="btn-group">
-												<a class="btn" href="index.html">Trang chủ</a>
-												<a class="btn" href="direction.html">Chỉ đường</a>
-												<a class="btn" href="search.html">Tìm kiếm</a>
-												<a class="btn" href="contact.html">Liên hệ</a>
-										</div>
-								</ul>
-						</div>
-				</footer>
-			</div>
-	</body>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="imgs/1.jpg" alt="Ninh Kieu">
+                    <div class="carousel-caption">
+                        <h3>Bến Ninh Kiều</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imgs/4.jpg" alt="Trung Tam">
+                    <div class="carousel-caption">
+                        <h3>Trung Tâm Thành Phố</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imgs/5.jpg" alt="Cho">
+                    <div class="carousel-caption">
+                        <h3>Chợ Ninh Kiều</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imgs/3.jpg" alt="Cho Noi">
+                    <div class="carousel-caption">
+                        <h3>Chợ Nổi Cái Răng</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imgs/6.jpg" alt="Cho Noi">
+                    <div class="carousel-caption">
+                        <h3>Chợ Nổi Cái Răng</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imgs/2.jpg" alt="Nam Nha">
+                    <div class="carousel-caption">
+                        <h3>Nam Nhã Đường</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imgs/7.jpg" alt="Nha Co">
+                    <div class="carousel-caption">
+                        <h3>Nhà Cổ Bình Thủy</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imgs/8.jpg" alt="Vuon Co">
+                    <div class="carousel-caption">
+                        <h3>Vườn Cò Bằng Lăng</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imgs/9.jpg" alt="Bao Tang">
+                    <div class="carousel-caption">
+                        <h3>Bảo Tàng Cần Thơ</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#calTravel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#calTravel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <br><br>
+        <div class="jumbotron">
+            <h3 class="text-center text-primary">Các địa điểm du lịch ở Ninh Kiều</h3>
+            <p>- Bảo Tàng Cần Thơ</p>
+            Bảo tàng thành phố Cần Thơ, tọa lạc tại số 1, đường Ðại lộ Hòa Bình, quận Ninh Kiều, thành phố Cần Thơ. Có diện tích gần 3.000m², nên bảo tàng Cần Thơ được xem là bảo tàng tổng hợp có quy mô lớn nhất khu vực Ðồng bằng Sông Cửu Long.Bảo tàng thành phố
+            Cần Thơ được thành lập vào năm 1976, có tên là trung tâm văn hóa Việt – Mỹ, qua nhiều lần thay đổi tên đến năm 1992 mới chính thức mang tên Bảo tàng Cần Thơ . Bảo tàng trưng bày hiện vật và giới thiệu về Ðất nước và con người Cần Thơ qua từng
+            thời kỳ lịch sử, các thành tựu kinh tế – văn hóa xã hội, các hiện vật, vũ khí, mô hình thời chiến của các dân tộc Kinh, Hoa, Khmer trong quá trình dựng nước – giữ nước và phát triển đất nước để có một hiện tại và tương lai tươi đẹp của vùng
+            đất Tây Ðô ngày nay. Bên trong bảo tàng hiện trưng bày khoảng 1000 cổ vật, di vật, hiện vật, di tích lịch sử quý hiếm. Bảo tàng gồm 2 tầng lầu. Tầng trệt được trưng bày khái quát về đặc điểm tự nhiên – xã hội, Thơ xưa và nay, giới thiệu vị
+            trí địa lý, đất đai, khí hậu sông ngòi, động thực vật, cảnh quan, văn hóa óc eo, văn hóa 3 dân tộc Kinh – Khmer – Hoa, triển lảm ảnh chụp Cần Thơ xưa và nay. Tầng 2 được trưng bày về lịch sử chống giặc ngoại xâm của nhân dân Cần Thơ – Hậu
+            Giang trong kháng chiến chống Mỹ và Pháp cũng như những vũ khí, chiến tích chiến tranh Việt Nam.
+            <center><img src="imgs/15.jpg" alt="Bảo Tàng Cần Thơ"></center>
+            <br><br>
+            <p>- Bến Ninh Kiều</p>
+            Bến Ninh Kiều nay được gọi là Công viên Ninh Kiều là một bến nước và là địa danh du lịch, văn hóa của thành phố Cần Thơ hình thành từ thế kỷ 19. Bến Ninh Kiều tọa lạc ở bờ phải sông Hậu, nằm giữa ngã ba sông Hậu và sông Cần Thơ tiếp giáp với đường Hai
+            Bà Trưng, phường Tân An, quận Ninh Kiều thuộc thành phố Cần Thơ. Bến Ninh Kiều là một địa danh du lịch có từ lâu và hấp dẫn du khách bởi phong cảnh sông nước hữu tình và vị trí thuận lợi nhìn ra dòng sông Hậu. Từ lâu bến Ninh Kiều đã trở thành
+            biểu tượng về nét đẹp thơ mộng bên bờ sông Hậu của cả Thành phố Cần Thơ, thu hút nhiều du khách đến tham quan và đi vào thơ ca.
+            <center><img src="imgs/16.jpg" alt="Bến Ninh Kiều"></center>
+            <br><br>
+            <p>- Chợ Nổi Cái Răng</p>
+            Chợ nổi Cái Răng là chợ nổi chuyên trao đổi, mua bán nông sản, các loại trái cây, hàng hóa, thực phẩm, ăn uống ở trên sông và là điểm tham quan đặc sắc của quận Cái Răng, thành phố Cần Thơ. Chợ nổi Cái Răng là một trong ba chợ nổi lớn nhất Cần Thơ. Nét
+            độc đáo và đặc điểm chính của chợ nổi Cái Răng là chuyên buôn bán các loại trái cây, đặc sản của vùng đồng bằng sông Cửu Long. Chợ nổi Cái Răng nằm trên sông Cái Răng, gần cầu Cái Răng, cách trung tâm thành phố Cần Thơ khoảng 6 km đường bộ
+            và mất 30 phút nếu đi bằng thuyền từ Bến Ninh Kiều (thành phố Cần Thơ - thủ phủ của Tây Đô cũ). Cũng như những chợ nổi khác ở Đồng bằng sông Cửu Long, chợ được hình thành để đáp ứng nhu cầu mua bán, trao đổi hàng hóa khi đường bộ và các phương
+            tiện lưu thông đường bộ chưa phát triển. Người ta tụ tập trên sông và bằng các phương tiện như xuồng, ghe, tắc ráng...
+            <center><img src="imgs/17.jpg" alt="Chợ Nổi Cái Răng"></center>
+            <br><br>
+        </div>
+
+        <div class="jumbotron">
+            <h3 class="text-center text-primary">Các địa điểm du lịch ở Bình Thủy</h3>
+            <p>- Nam Nhã Đường</p>
+            Chùa Nam Nhã - còn gọi chùa Minh Sư - nằm trong khung cảnh tĩnh mịch với cảnh trí đơn sơ bên bờ sông Bình Thuỷ. Chung quanh là khu vườn rợp mát. Trong vườn, trước đây được trồng nhiều loại cây quý như tùng, trắc và các cây cổ thụ khác. Dưới bóng mát những
+            gốc cây này là những cây kiểng quý giá, nhiều tuổi, được chăm chút công phu tạo cảnh quan an bình thoát tục. Du khách đến Cần Thơ, theo đường Cách Mạng Tháng Tám đi lên Bình Thủy, sẽ thấy Nam Nhã Đường nằm ở vị trí bên phải đầu vàm Bình Thuỷ,
+            đối diện đình Bình Thủy bên kia sông. Nơi này, xưa thuộc ấp Bình Nhật, xã Long Tuyền (nay thuộc phường An Thới, quận Bình Thủy, thành phố Cần Thơ).
+            <center><img src="imgs/11.jpg" alt="Chùa Nam Nhã"></center>
+            <br><br>
+            <p>- Nhà Cổ Bình Thủy</p>
+            Nhà cổ Bình Thuỷ nằm ngay trên đường Bùi Hữu Nghĩa, phường Bình Thủy, ngôi nhà cổ của gia đình họ Dương (xây từ năm 1870), mỗi năm đón tiếp hàng ngàn lượt khách trong ngoài nước đến tham quan. Nhà cổ Bình Thủy kiến trúc độc đáo trên 100 năm tuổi, là sự
+            kết hợp giao lưu văn hóa Đông – Tây, được thể hiện nhiều họa tiết hoa văn đẹp mắt
+            <center><img src="imgs/12.jpg" alt="Nhà Cổ Bình Thủy"></center>
+        </div>
+
+        <div class="jumbotron">
+            <h3 class="text-center text-primary">Các địa điểm du lịch ở Phong Điền</h3>
+            <p>- Khu Du Lịch Mỹ Khánh</p>
+            Làng Du Lịch Mỹ Khánh thuộc huyện Phong Điền – TP.Cần Thơ là điểm đến hấp dẫn và là điểm du lịch tiêu biểu ở Đồng bằng sông Cửu Long, nằm cách trung tâm TP.Cần Thơ 10km, trên tuyến Lộ Vòng Cung lịch sử và ở giữa hai chợ nổi Cái Răng và Phong Điền, là
+            nơi hội tụ những tinh hoa văn hóa sông nước miệt vườn với nhiều chủng loại trái cây đặc sản, bốn mùa trĩu quả và nhiều chương trình ẩm thực phong phú, đậm chất Nam bộ và nhiều nhà hàng có số ghế ngồi phù hợp nhu cầu của khách,hội trường 350
+            chỗ ngồi với đầy đũ trang thiết bị, có đội tàu và du thuyền chuyên phục vụ tham quan chợ nổi,ăn uống trên tàu. Đến với Làng Du Lịch Mỹ Khánh, quý khách thỏa sức khám phá, tìm hiểu về đời sống cư dân miệt vườn như: tham quan Nhà cổ Nam bộ ,
+            thưởng thức chương trình văn nghệ “Đờn ca tài tử”, “Một ngày làm Điền Chủ” với bữa cơm điền chủ, “Một ngày làm nông dân”, “Tát mương bắt cá…”, tham quan Làng nghề văn hóa truyền thống, vườn cây ăn trái, các dịch vụ tại chỗ như đi xe ngựa,
+            bơi thuyền, Taxi điện, đua heo, đua chó, xiếc khỉ, câu cá sấu…và nhiều chương trình khác theo yêu cầu của quý khách.
+            <center><img src="imgs/13.jpg" alt="Khu Du Lịch Mỹ Khánh"></center>
+            <br><br>
+            <p>- Thiền Viện Trúc Lâm Phương Nam</p>
+            Thiền viện Trúc Lâm Phương Nam được khánh thành ngày 17/5/2014, tại xã Mỹ Khánh, huyện Phong Điền, TP Cần Thơ. Thiền viện Trúc Lâm Phương Nam được xây dựng trên diện tích gần 4 ha, với kết cấu lợp ngói, khung cột gỗ lim, chánh điện rộng cùng nhà tổ, nhiều
+            tượng Phật được làm bằng gỗ Du Sam… Tổng kinh phí xây dựng là 145 tỷ đồng. Đây là ngôi chùa rộng nhất khu vực Đồng bằng sông Cửu Long. Thiền viện Trúc Lâm Phương Nam do Đại tướng Phạm Văn Trà - nguyên Bộ trưởng Bộ Quốc phòng - đề xuất xây
+            dựng và chính Đại tướng cũng là trưởng ban vận động đóng góp xây dựng Thiền viện.
+            <center><img src="imgs/14.jpg" alt="Thiền Viện Trúc Lâm Phương Nam"></center>
+        </div>
+
+        <div class="jumbotron">
+            <h3 class="text-center text-primary">Các địa điểm du lịch ở Thốt Nốt</h3>
+            <p>- Vườn Cò Bằng Lăng</p>
+            Vườn cò Bằng Lăng ở xã Thới Thuận, huyện Thốt Nốt cách Cần Thơ 45 km đi theo Ql 91 hướng về Long Xuyên, vườn rộng hơn 2 ha có trên 20 loài chim, 10 giống cò với số lượng đông hàng chục ngàn con sinh sống trong vườn. Có 2 cách để đi thăm vườn cò: khách
+            du lịch có thể thuê thuyền. thong thả theo dòng sông Hậu, len lỏi vào các con kênh nhỏ để vào thăm vườn, hoặc du khách có thể đi xe. Đường vào vườn cò là đường làng nhỏ, không thích hợp cho xe du lịch. Khách du lịch có thể đi xe máy để vào
+            hoặc là đi bộ. Đi bộ là thú vị nhất, khách du lịch có thể thả hồn theo khung cảnh thôn dã trên đường đi.
+            <center><img src="imgs/10.jpg" alt="Vườn Cò Bằng Lăng"></center>
+        </div>
+
+        <div class="jumbotron">
+            <h3 class="text-center text-success">Đôi nét về Cần Thơ qua góc máy của Chamiee Channel</h3>
+
+            <div class="embed-responsive embed-responsive-16by9">
+                <center>
+                    <iframe class="embed-responsive-item" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FYANLoveTravel%2Fvideos%2F631835296940942" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
+                        allowFullScreen="true" autoplay="1"></iframe>
+                </center>
+            </div>
+        </div>
+        <br>
+        <footer>
+            <center>
+                <p>© Bản quyền thuộc về Cổ Bảo Hiếu & Nguyễn Huỳnh Thúy An.</p>
+            </center>
+            <div class="col-sm-10 col-sm-offset-2">
+                <ul class="nav navbar-nav navbar-right nav-pills nav-default">
+                    <div class="btn-group">
+                        <a class="btn" href="index.html">Trang chủ</a>
+                        <a class="btn" href="direction.html">Chỉ đường</a>
+                        <a class="btn" href="search.html">Tìm kiếm</a>
+                        <a class="btn" href="contact.html">Liên hệ</a>
+                    </div>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
 </html>
